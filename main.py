@@ -1,5 +1,6 @@
 import pygame
 from constants import * #wildcard import, not recomended to use, but alright for this project
+from player import *
 
 def main():
     print("Starting asteroids!")
@@ -10,6 +11,8 @@ def main():
     time_clock = pygame.time.Clock()
     dt = 0 #number of fps?
 
+    p = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
     while True:
         for event in pygame.event.get():
             #quits game if you press [X]
@@ -17,6 +20,7 @@ def main():
                 return
 
         screen.fill("black")
+        p.draw(screen)
         pygame.display.flip()
         #param 60 means the game can't run above 60 fps
         dt = time_clock.tick(60) / 1000
