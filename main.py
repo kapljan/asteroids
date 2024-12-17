@@ -21,6 +21,9 @@ def main():
 
         screen.fill("black")
         p.draw(screen)
+        p.update(dt)
+
+        #renders the screen
         pygame.display.flip()
         #param 60 means the game can't run above 60 fps
         dt = time_clock.tick(60) / 1000
